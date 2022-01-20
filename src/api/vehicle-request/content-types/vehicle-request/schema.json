@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vehicle_requests",
+  "info": {
+    "singularName": "vehicle-request",
+    "pluralName": "vehicle-requests",
+    "displayName": "vehicleRequest",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "vehicle": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vehicle.vehicle"
+    },
+    "purpose": {
+      "type": "text"
+    },
+    "approved": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vendors",
+  "info": {
+    "singularName": "vendor",
+    "pluralName": "vendors",
+    "displayName": "vendor"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "companyName": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email"
+    },
+    "website": {
+      "type": "string"
+    },
+    "contactName": {
+      "type": "string"
+    },
+    "serviceDescription": {
+      "type": "text"
+    },
+    "inventories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::inventory.inventory",
+      "mappedBy": "vendor"
+    },
+    "service_task": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::service-task.service-task",
+      "inversedBy": "vendors"
+    },
+    "fuel": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::fuel.fuel",
+      "inversedBy": "vendor"
+    }
+  }
+}

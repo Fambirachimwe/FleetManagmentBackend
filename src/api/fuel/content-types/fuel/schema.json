@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fuels",
+  "info": {
+    "singularName": "fuel",
+    "pluralName": "fuels",
+    "displayName": "Fuel",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Volume": {
+      "type": "decimal"
+    },
+    "Cost": {
+      "type": "decimal"
+    },
+    "vendor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vendor.vendor",
+      "inversedBy": "fuel"
+    }
+  }
+}

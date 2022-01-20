@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fuel_requests",
+  "info": {
+    "singularName": "fuel-request",
+    "pluralName": "fuel-requests",
+    "displayName": "FuelRequest",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "applicant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "vehicle": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vehicle.vehicle"
+    },
+    "volume": {
+      "type": "decimal"
+    },
+    "typeOfFuel": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "text"
+    },
+    "milage": {
+      "type": "decimal"
+    },
+    "typeOfRequest": {
+      "type": "enumeration",
+      "enum": [
+        "personalCar",
+        "topUpVehicle"
+      ]
+    },
+    "approved": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

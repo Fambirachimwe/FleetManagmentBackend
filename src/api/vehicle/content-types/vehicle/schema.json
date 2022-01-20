@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vehicles",
+  "info": {
+    "singularName": "vehicle",
+    "pluralName": "vehicles",
+    "displayName": "vehicle",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "licenceNumber": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "year": {
+      "type": "date"
+    },
+    "model": {
+      "type": "string"
+    },
+    "department": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::department.department",
+      "inversedBy": "vehicles"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "oparator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "vehicle"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "active",
+        "assigned",
+        "outofservice",
+        "notassinged"
+      ]
+    },
+    "service_task": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::service-task.service-task",
+      "inversedBy": "vehicle"
+    }
+  }
+}
