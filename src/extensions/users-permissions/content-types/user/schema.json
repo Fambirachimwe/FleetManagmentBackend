@@ -63,12 +63,6 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "vehicle": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::vehicle.vehicle",
-      "mappedBy": "oparator"
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -87,6 +81,12 @@
         "Admin"
       ],
       "default": "Authenticated"
+    },
+    "vehicles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::vehicle.vehicle",
+      "inversedBy": "oparators"
     }
   }
 }

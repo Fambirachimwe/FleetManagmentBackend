@@ -42,8 +42,7 @@
       ]
     },
     "approved": {
-      "type": "boolean",
-      "default": false
+      "type": "boolean"
     }
   }
 }

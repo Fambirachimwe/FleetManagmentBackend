@@ -43,11 +43,11 @@
         "videos"
       ]
     },
-    "oparator": {
+    "oparators": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToMany",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "vehicle"
+      "inversedBy": "vehicles"
     },
     "status": {
       "type": "enumeration",
@@ -63,6 +63,12 @@
       "relation": "oneToOne",
       "target": "api::service-task.service-task",
       "inversedBy": "vehicle"
+    },
+    "vehicle_requests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::vehicle-request.vehicle-request",
+      "mappedBy": "vehicle"
     }
   }
 }

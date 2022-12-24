@@ -14,15 +14,20 @@
   "attributes": {
     "vehicle": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::vehicle.vehicle"
+      "relation": "manyToOne",
+      "target": "api::vehicle.vehicle",
+      "inversedBy": "vehicle_requests"
     },
     "purpose": {
       "type": "text"
     },
     "approved": {
-      "type": "boolean",
-      "default": false
+      "type": "boolean"
+    },
+    "applicant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
     }
   }
 }
